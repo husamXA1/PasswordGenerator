@@ -1,0 +1,173 @@
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+/* Global Variables */
+:root {
+    --bg-color: #eef0f4;
+    --color: #333;
+    --color2: #999;
+    --togglebg: #333;
+    --roundcolor: #eef0f4;
+    --toggleslider: #111;
+    --togglesliderColor: #111;
+    --filter1: drop-shadow(-8px -8px 12px #ffffff) drop-shadow(8px 8px 12px #c3c5c8);
+    --filter2: drop-shadow(-4px -4px 6px #ffffff) drop-shadow(4px 4px 6px #c3c5c8);
+    --filter3: drop-shadow(-2px -2px 3px #ffffff) drop-shadow(2px 2px 3px #c3c5c8);
+}
+
+/* Global Rules */
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: url('../images/bg.jpg');
+}
+.main-container h1,
+.main-container label {
+    margin: 0;
+    padding: 0;
+    color: var(--color);
+}
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    margin: 10px;
+}
+@media (max-width: 767px) {
+    .input-container {
+        width: 80%;
+    }
+}
+
+/* Main container */
+.main-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg-color);
+    padding: 50px;
+    border-radius: 5px;
+    filter: var(--filter1);
+    width: 80vw;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 767px) {
+    .main-container {
+        padding: 20px;
+        filter: var(--filter2);
+    }
+}
+
+/* Main Title */
+.main-container h1 {
+    margin: 10px;
+    font-size: 40px;
+}
+.main-container h1 sub {
+    font-size: 0.4em;
+    font-weight: normal;
+    color: var(--color2);
+}
+@media (max-width: 767px) {
+    .main-container h1 {
+        font-size: 28px;
+    }
+}
+
+/* Generated Password Field */
+#passwordField {
+    width: 400px;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    margin: 10px;
+    padding: 20px;
+    filter: var(--filter2);
+}
+@media (max-width: 767px) {
+    #passwordField {
+        width: 80%;
+        font-size: 18px;
+        padding: 10px;
+        filter: var(--filter3);
+    }
+}
+
+/* Input Fields */
+.input-container label {
+    font-size: 22px;
+}
+.input-container input {
+    width: 50px;
+}
+#charactersCount {
+    border: none;
+    filter: var(--filter3);
+    font-size: 22px;
+}
+@media (max-width: 767px) {
+    .input-container label {
+        font-size: 16px;
+    }
+    .input-container input {
+        width: 50px;
+    }
+    #charactersCount {
+        border: none;
+        filter: var(--filter3);
+        font-size: 16px;
+    }   
+}
+
+/* Tip */
+.tip {
+    color: red;
+    opacity: 0.7;
+    margin: 0;
+}
+@media (max-width: 767px) {
+    .tip {
+        font-size: 14px;
+    }
+}
+
+/* Buttons */
+.buttons-container {
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.buttons-container button {
+    width: 150px;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    filter: var(--filter3);
+    background-color: var(--color2);
+    color: var(--color);
+    cursor: pointer;
+    transition: 0.3s;
+}
+.buttons-container button:hover {
+    background-color: var(--color);
+    color: var(--color2);
+}
+.buttons-container button:active {
+    background-color: black;
+}
+@media (max-width: 767px) {
+    .buttons-container {
+        width: 80%;
+    }
+    .buttons-container button {
+        width: 120px;
+        height: 40px;
+        font-size: 16px;
+    }
+}

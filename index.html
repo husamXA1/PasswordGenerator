@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Password Generator by Husam</title>
+        <!-- Font Awesome Library -->
+        <script src="https://kit.fontawesome.com/c9665a1dd0.js" crossorigin="anonymous"></script>
+        <!-- Styles files -->
+        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body>
+        <div class="main-container">
+            <!-- The main title -->
+            <h1>Password Generator <sub>By Husam</sub></h1>
+            <!-- The field for the generated password -->
+            <input id="passwordField" type="text" placeholder="Your password will be here" disabled>
+            <!-- Number of characters -->
+            <div class="input-container">
+                <label for="charactersCount">Number of characters</label>
+                <input id="charactersCount" type="number" placeholder="#" value="8" min="4" max="16">
+            </div>
+            <!-- Lowercase checkbox -->
+            <div class="input-container">
+                <label for="hasLower">Include lowercase letters</label>
+                <input id="hasLower" type="checkbox">
+            </div>
+            <!-- Uppercase checkbox -->
+            <div class="input-container">
+                <label for="hasUpper">Include uppercase letters</label>
+                <input id="hasUpper" type="checkbox">
+            </div>
+            <!-- Numbers checkbox -->
+            <div class="input-container">
+                <label for="hasNumbers">Include numbers</label>
+                <input id="hasNumbers" type="checkbox">
+            </div>
+            <!-- Symbols checkbox -->
+            <div class="input-container">
+                <label for="hasSymbols">Include symbols</label>
+                <input id="hasSymbols" type="checkbox">
+            </div>
+            <!-- Tip -->
+            <p class="tip">*if nothing is selected the default is lowercase letters</p>
+            <!-- Buttons -->
+            <div class="buttons-container">
+                <!-- Generate Button -->
+                <button id="generateBtn"><i class="fa-solid fa-key"></i> Generate</button>
+                <!-- Copy Button -->
+                <button id="copyBtn"><i class="fa-regular fa-clipboard"></i> Copy</button>
+            </div>
+        </div>
+        <!-- Scripts Files -->
+        <script src="scripts/main.js"></script>
+    </body>
+</html>
