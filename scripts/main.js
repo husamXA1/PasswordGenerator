@@ -9,31 +9,26 @@ copyBtn.onclick = () => {
 
 function generatePassword(length = 4, hasLower = true, hasUpper = true, hasNumbers = true, hasSymbols = true) {
     let password = []
+    // All functions for generating
+    let functions = {
+        lower: getRandomLower,
+        upper: getRandomUpper,
+        number: getRandomNumber,
+        symbol: getRandomSymbol
+    };
+    // The functions selected by the user are filtered here
+    let usedFunctions = [];
+    if (hasLower) usedFunctions.push("lower");
+    if (hasUpper) usedFunctions.push("upper");
+    if (hasNumbers) usedFunctions.push("number");
+    if (hasSymbols) usedFunctions.push("symbol");
+    // Generating random password from the functions selected by the user
     while (password.length < length) {
-        let choise = 1 + Math.floor(Math.random() * 4);
-        switch (choise) {
-            case 1:
-                if (hasUpper) {
-                    password.push(getRandomUpper());
-                    break;
-                }
-            case 2:
-                if (hasLower) {
-                    password.push(getRandomLower());
-                    break;
-                }
-            case 3:
-                if (hasNumbers) {
-                    password.push(getRandomNumber());
-                    break;
-                }
-            case 4:
-                if (hasSymbols) {
-                    password.push(getRandomSymbol());
-                }
-                break;
-            default:
-                password.push(getRandomLower());
+        if (usedFunctions.length == 0) {
+            password.push(functions.lower());
+        } else {
+            let choise = Math.floor(Math.random() * usedFunctions.length);
+            password.push(functions[usedFunctions[choise]]());
         }
     }
     return password.join("");
